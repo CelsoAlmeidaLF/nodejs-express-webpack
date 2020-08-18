@@ -25,7 +25,7 @@ module.exports = {
 
 ### Plugin-Html
 
-  Comando de instalação do plugin-html.
+  Comando de instalação do `html-webpack-plugin`.
 
 ```sh
 
@@ -33,7 +33,7 @@ $ npm i -D html-webpack-plugin
 
 ```
 
-Código de configuração do plugin-html.
+Código de configuração do `html-webpack-plugin`.
 
 ```js
 
@@ -50,7 +50,7 @@ plugins: [
 
 ### Plugin-Css
 
-  Comando de instalação do plugin-css.
+  Comando de instalação do `mini-css-extract-plugin`.
 
 ```sh
 
@@ -58,7 +58,7 @@ $ npm i -D node-sass sass-loader style-loader css-loader mini-css-extract-plugin
 
 ```
 
-  Código de configuração do plugin-css.
+  Código de configuração do `mini-css-extract-plugin`.
 
 ```js
 
