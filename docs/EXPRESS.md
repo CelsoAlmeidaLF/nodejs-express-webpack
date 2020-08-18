@@ -1,6 +1,6 @@
 # EXPRESS NODEJS
 
-  Comando de intalação do plugin `webpack-dev-middleware`
+  Comando de instalação do plugin `webpack-dev-middleware`
 
 ```sh
 
