@@ -21,3 +21,15 @@
       path: path.resolve(__dirname, 'dist'),
     }
   };
+
+  ```
+
+[Códigos de plugins utilizados](https://github.com/CelsoAlmeidaLF/mat-est-express-webpack/blob/master/docs/WEBPACK.md)
+
+  -  `html-webpack-plugin` - plugin-html
+
+  -  `mini-css-extract-plugin` - plugin-css
+
+  -  config-babel com `webpack`
+
+[Código para do arquivo `express`](https://github.com/CelsoAlmeidaLF/mat-est-express-webpack/blob/master/docs/EXPRESS.md)
