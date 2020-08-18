@@ -1,5 +1,11 @@
 import 'bootstrap';
 import '../css/style.scss';
+import $ from 'jquery';
+
+// $(function() {
+//   $('body').append('<h1>Webpack</h1>');
+// });
+
 
 // import '../css/style.scss';
 // import img from '../assets/bkg.jpg';

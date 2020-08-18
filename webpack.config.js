@@ -5,10 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: './src/js/index.js',
   output: {
-    filename:'main.js',
+    filename:'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -23,7 +23,6 @@ module.exports = {
             options: { presets:['@babel/preset-env'] }
         }
       }
-
       // {
       //   test:/\.(jpe?g|png|gif|svg)$/i,
       //   loader: 'file-loader',
@@ -31,21 +30,15 @@ module.exports = {
       //     name: '[name].[ext]'
       //   }
       // }
-
     ]
   },
-
   plugins: [
-
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.html'
-    }),
-
+    // new HtmlWebpackPlugin({
+    //   filename: 'index.html',
+    //   template: './src/index.html'
+    // }),
     new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: 'css/style.css'
     })
-
   ]
-
 };
