@@ -22,6 +22,14 @@ const webpackConfig = require('./webpack.config');
 // middleware
 app.use(webpackDevMiddleware(webpack(webpackConfig)));
 
+// app.use(require("webpack-dev-middleware")(compiler, {
+//   logLevel: 'warn', publicPath: webpackConfig.output.publicPath
+// }));
+
+// app.use(require("webpack-hot-middleware")(compiler, {
+//   log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
+// }));
+
 // static public
 app.use(express.static(__dirname + '/public'));
 

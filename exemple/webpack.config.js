@@ -1,18 +1,14 @@
-const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'development',
-  context: __dirname,
-  entry: [
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    './src/js/client.js'],
+  entry: './src/js/index.js',
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'js/bundle.js'
+    filename:'js/bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
-  devtool: '#source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -37,10 +33,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html'
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/style.css'
     })
-  ],
+  ]
 };

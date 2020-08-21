@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "server": "live-server ./dist"
+    "server": "node ./bin"
   },
   "keywords": [],
   "author": "Systekna",
@@ -35,6 +35,7 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
