@@ -216,12 +216,17 @@ $ npm i -D file-loader
 module: {
   rules: [
     {
-      test:/\.(jpe?g|png|gif|svg)$/i,
-      loader: 'file-loader',
-      options: {
-        name: '[name].[ext]'
-      }
+      test: /\.(png|svg|jpg|gif)$/,
+      use: [
+        'file-loader',
+      ],
     },
+    {
+       test: /\.(woff|woff2|eot|ttf|otf)$/,
+       use: [
+         'file-loader',
+       ],
+     },
   ]
 },
 

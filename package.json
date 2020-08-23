@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev-server": "webpack-dev-server",
     "live": "live-server ./dist",
     "build": "webpack",
     "server": "node ./bin"
