@@ -1,13 +1,13 @@
 # EXPRESS NODEJS
 
-  Comando de instalação do plugin `webpack-dev-middleware`
+  - Comando de instalação do plugin `webpack-dev-middleware`
 
 ```sh
 
 $ npm i -D webpack-dev-middleware
 
 ```
-  Código do `express` no arquivo raiz `index.js`.
+  - Código do `express` no arquivo raiz `index.js`.
 
 ```js
 
@@ -17,10 +17,10 @@ const app = express();
 // webpack
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('./webpack.config');
+const compiler = require('./webpack.config');
 
 // middleware
-app.use(webpackDevMiddleware(webpack(webpackConfig)));
+app.use(webpackDevMiddleware(webpack(copiler)));
 
 // app.use(require("webpack-dev-middleware")(compiler, {
 //   logLevel: 'warn', publicPath: webpackConfig.output.publicPath
@@ -39,7 +39,7 @@ app.listen(3000, () => {
 
 ```
 
-  Código de configuração do arquivo `webpack.config.js`.
+  - Código de configuração do arquivo `webpack.config.js`.
 
 ```js
 

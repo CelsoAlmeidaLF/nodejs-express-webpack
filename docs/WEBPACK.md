@@ -37,8 +37,11 @@ module.exports = {
 
 ```sh
 
-# comando webpack
-$ npx webpack
+# build webpack, modo de desenvolvimento
+$ npx webpack -d
+
+# build webpack, modo de produção
+$ npx webpack -p
 
 # execute o arquivo destinado
 $ node ./dist
@@ -47,25 +50,163 @@ $ node ./dist
 
 ## Instalação
 
-*Dependencias de desenvolvimento*
+  *Dependencias de desenvolvimento*
 
 ```sh
 
 # dependencias do WEBPACK.
-npm i -D webpack webpack-cli webpack-dev-server
+$ npm i -D webpack webpack-cli webpack-dev-server
 
 # trabalhar com webapck e express, dependencias principais.
-npm i -D webpack-dev-middlewar webpack-hot-middleware
+$ npm i -D webpack-dev-middlewar webpack-hot-middleware
 
 # utilizando babel.
-$ npm i -D @babel/cli @babel/core @babel/node @babel/preset-env babel-loader
+$ npm i -D @babel/cli @babel/core @babel/node @babel/preset-env babel-loade
 
 # utilizando css.
-$ npm i -D css-loader node-sass sass-loader style-loader mini-css-extract-plugin
+$ npm i -D css-loade node-sass sass-loade style-loade mini-css-extract-plugin
 
 # utilizando HTML no webapck.
-$ npm i -D html-webpack-plugin
+$ npm i -D html-webpack-plugi
 
 # utilizando arquivos de imagens e outros no webpack.
 $ npm i -D file-loader
+
+
+```
+---
+
+## PLUGINS
+
+<br>
+
+#### Plugin-HTML
+
+ - Comando de instalação do `html-webpack-plugin`.
+
+```sh
+
+# instala a dependencia de desenvolvimento.
+$ npm i -D html-webpack-plugin
+
+```
+
+  - Código de configuração do `html-webpack-plugin`.
+
+```js
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+plugins: [
+  new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: './src/index.html'
+  })
+]
+
+```
+
+<br>
+
+#### Plugin-CSS
+
+  - Comando de instalação do `mini-css-extract-plugin`.
+
+```sh
+
+$ npm i -D node-sass sass-loader style-loader css-loader mini-css-extract-plugin
+
+```
+
+  - Código de configuração do `mini-css-extract-plugin`.
+
+```js
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module: {
+  rules: [
+    {
+      test: /\.(sa|sc|c)ss$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader',
+        'sass-loader'
+      ]
+    },
+    {
+      test: /\.css$/i,
+      use: [
+        'style-loader',
+        'css-loader'
+      ]      
+    }
+  ]
+},
+
+plugins: [
+  new MiniCssExtractPlugin({
+    filename: 'style.css'
+  })
+]
+
+```
+
+<br>
+
+### Plugin-Babel
+
+  - Comando de instalação do plugin-babel.
+
+```sh
+
+$ npm i -D @babel/core babel-loader @babel/preset-env
+
+```
+  - Código de configuração do plugin-babel.
+
+```js
+
+module: {
+  rules: [
+    {
+      test:/.\.js$/,
+      exclude:/node_modules/,
+      use: {
+          loader: 'babel-loader',
+          options: {
+            presets:['@babel/preset-env']
+          }
+      }
+    }
+},
+
+```
+
+<br>
+
+#### Plugin-Files
+
+  - Comando de instalação do plugin-files.
+
+```sh
+
+$ npm i -D file-loader
+
+```
+  - Código de configuração do plugin-files.
+
+```js
+
+module: {
+  rules: [
+    {
+      test:/\.(jpe?g|png|gif|svg)$/i,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+      }
+    }
+},
+
 ```

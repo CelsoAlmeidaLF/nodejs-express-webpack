@@ -5,8 +5,6 @@
 
   ```sh
 
-
-
   $ touch webpack.config.js
 
   ```
