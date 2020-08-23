@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "live": "live-server ./dist",
-    "build": "webpack -d",
+    "build": "webpack",
     "server": "node ./bin"
   },
   "keywords": [],
@@ -14,8 +14,13 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "css-loader": "^4.2.1",
     "html-webpack-plugin": "^4.3.0",
     "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^0.10.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"

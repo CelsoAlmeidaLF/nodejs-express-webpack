@@ -28,7 +28,7 @@ module.exports = {
   entry: './src/index.js',
   plugins: [],
   output: {
-    filename:'index.js',
+    filename:'js/index.js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -153,9 +153,17 @@ module: {
 
 plugins: [
   new MiniCssExtractPlugin({
-    filename: 'style.css'
+    filename: 'css/style.css'
   }),
 ],
+
+```
+- Importar pelo sytle.scss pelo `./src/index.js`
+
+```js
+
+//import pelo arquivo, ./src/index.js
+require('sytle.scss');
 
 ```
 
