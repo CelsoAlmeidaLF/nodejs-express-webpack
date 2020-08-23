@@ -1,9 +1,11 @@
 # WEBPACK
-  **Material de estudo webpack.**
+  *Meu material de estudo com webpack.*
 
   Criação de novo arquivo: `webpack.config.js`
 
   ```sh
+
+
 
   $ touch webpack.config.js
 
