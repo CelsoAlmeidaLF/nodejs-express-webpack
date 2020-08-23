@@ -24,10 +24,15 @@ $ nano webpack.config.js
 const path = require('path');
 
 module.exports = {
+  // mode: 'development',
   entry: './src/index.js',
+  plugins: [],
   output: {
     filename:'index.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: []
   }
 };
 
@@ -72,6 +77,8 @@ $ npm i -D html-webpack-plugi
 # utilizando arquivos de imagens e outros no webpack.
 $ npm i -D file-loader
 
+# servidor live
+$ npm -D live-server
 
 ```
 ---
@@ -101,8 +108,8 @@ plugins: [
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: './src/index.html'
-  })
-]
+  }),
+],
 
 ```
 
@@ -147,8 +154,8 @@ module: {
 plugins: [
   new MiniCssExtractPlugin({
     filename: 'style.css'
-  })
-]
+  }),
+],
 
 ```
 
@@ -207,6 +214,7 @@ module: {
         name: '[name].[ext]'
       }
     }
+  ]
 },
 
 ```
