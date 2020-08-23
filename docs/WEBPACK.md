@@ -66,13 +66,13 @@ $ npm i -D webpack webpack-cli webpack-dev-server
 $ npm i -D webpack-dev-middlewar webpack-hot-middleware
 
 # utilizando babel.
-$ npm i -D @babel/cli @babel/core @babel/node @babel/preset-env babel-loade
+$ npm i -D @babel/cli @babel/core @babel/node @babel/preset-env babel-loader
 
 # utilizando css.
-$ npm i -D css-loade node-sass sass-loade style-loade mini-css-extract-plugin
+$ npm i -D css-loader node-sass sass-loader style-loader mini-css-extract-plugin
 
 # utilizando HTML no webapck.
-$ npm i -D html-webpack-plugi
+$ npm i -D html-webpack-plugin
 
 # utilizando arquivos de imagens e outros no webpack.
 $ npm i -D file-loader
@@ -193,7 +193,7 @@ module: {
             presets:['@babel/preset-env']
           }
       }
-    }
+    },
 },
 
 ```
@@ -221,7 +221,7 @@ module: {
       options: {
         name: '[name].[ext]'
       }
-    }
+    },
   ]
 },
 
