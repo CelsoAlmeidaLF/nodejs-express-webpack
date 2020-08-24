@@ -1,35 +1,23 @@
 # WEBPACK
   *Meu material de estudo com webpack.*
 
-  Criação de novo arquivo: `webpack.config.js`
+  Descrição do projeto.
 
-  ```sh
+```sh
 
-  $ touch webpack.config.js
+# clone protect
+$ git clone https://github.com/CelsoAlmeidaLF/webpack-express
 
-  ```
-  Código básico do arquivo `webpack.config.js`
-
-  ```js
-
-  const path = require('path');
-
-  module.exports = {
-    entry: './src/index.js',
-    output: {
-      filename:'main.js',
-      path: path.resolve(__dirname, 'dist'),
-    }
-  };
-
-  ```
+```
 
 [Códigos de plugins utilizados](https://github.com/CelsoAlmeidaLF/mat-est-express-webpack/blob/master/docs/WEBPACK.md)
 
-  -  `html-webpack-plugin` - plugin-html
+- `html-webpack-plugin`
 
-  -  `mini-css-extract-plugin` - plugin-css
+- `mini-css-extract-plugin`
 
-  -  config-babel com `webpack`
+- `babel-loader`
 
-[Código para do arquivo `express`](https://github.com/CelsoAlmeidaLF/mat-est-express-webpack/blob/master/docs/EXPRESS.md)
+- `file-loader`.
+
+[Código para do arquivo](https://github.com/CelsoAlmeidaLF/mat-est-express-webpack/blob/master/docs/EXPRESS.md) `express`
