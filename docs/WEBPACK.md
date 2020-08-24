@@ -8,7 +8,7 @@
 $ mkdir ./src
 
 # arquivo de teste
-$ echo console.log('WEBPACK, OK!') > ./src/index.js
+$ echo "console.log('WEBPACK, OK')" > ./src/index.js
 
 # criação do arquivo
 $ touch webpack.config.js
