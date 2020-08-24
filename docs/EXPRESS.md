@@ -18,26 +18,60 @@ $ mkdir bin; touch ./bin/index.js
   - Código do `express` em `./bin/index.js`.
 
 ```js
-// require express
+
 const express = require('express');
 const app = express();
-
-// require webpack
+const path = require('path');
 const webpack = require('webpack');
-const webpackDevMiddleware = require(
-  'webpack-dev-middleware');
-const copiler = require('./webpack.config');
+const middleware = require('webpack-dev-middleware');
+const copiler = require('../webpack.config');
+const port = 3000;
 
-// middleware
-app.use(webpackDevMiddleware(webpack(copiler)));
-// app.use(require("webpack-dev-middleware")(compiler));
+//middleware
+app.use(middleware(webpack(copiler)));
 
-// static public
+// folder public
 app.use(express.static(__dirname + '/public'));
 
-// port server
-app.listen(3000, () => {
-  console.log('server on port 3000') });
+// rotas
+app.get('/',(red, res) => { res.sendFile(
+    path.join(__dirname,'../views/index.html'))
+});
 
+//config server port
+app.listen(port, () => {
+  console.log(
+    `server runnin is http://localhost:${port}`)
+});
+
+
+```
+  - Agora, crie um arvivo `./views/index.html` para testar o projeto.
+
+```sh
+
+# cria diretorio e arquivo
+$ mkdir ./views; touch views/index.html
+
+# editar arquivo
+$ nano views/index.html
+
+```
+  - Copie e cole o Código fonte: `html`
+
+```html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>webpack-express</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h3>Index</h3>
+    <script src="js/index.js" charset="utf-8"></script>
+  </body>
+</html>
 
 ```
