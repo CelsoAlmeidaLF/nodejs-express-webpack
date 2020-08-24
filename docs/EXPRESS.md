@@ -1,87 +1,43 @@
 # EXPRESS NODEJS
 
-  - Comando de instalação do plugin `webpack-dev-middleware`
+  - Instale os plugins `webpack-dev-middleware` e
+  `webpack-hot-middleware`.
+
+  - crie um arquivo `.bin/index.js` para configuração do servidor express.
 
 ```sh
 
-$ npm i -D webpack-dev-middleware
+# instala as dependencias middleware
+$ npm i -D webpack-dev-middleware webpack-hot-middleware
+
+# arquivo ./bin/index.js
+$ mkdir bin; touch ./bin/index.js
 
 ```
-  - Código do `express` no arquivo raiz `index.js`.
+
+  - Código do `express` em `./bin/index.js`.
 
 ```js
-
+// require express
 const express = require('express');
 const app = express();
 
-// webpack
+// require webpack
 const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const compiler = require('./webpack.config');
+const webpackDevMiddleware = require(
+  'webpack-dev-middleware');
+const copiler = require('./webpack.config');
 
 // middleware
 app.use(webpackDevMiddleware(webpack(copiler)));
-
-// app.use(require("webpack-dev-middleware")(compiler, {
-//   logLevel: 'warn', publicPath: webpackConfig.output.publicPath
-// }));
-
-// app.use(require("webpack-hot-middleware")(compiler, {
-//   log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
-// }));
+// app.use(require("webpack-dev-middleware")(compiler));
 
 // static public
 app.use(express.static(__dirname + '/public'));
 
+// port server
 app.listen(3000, () => {
-  console.log('server on port 3000')
-});
+  console.log('server on port 3000') });
 
-```
-
-  - Código de configuração do arquivo `webpack.config.js`.
-
-```js
-
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-module.exports = {
-  entry: './src/js/index.js',
-  output: {
-    filename:'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  devtool: 'source-map',
-  module: {
-    rules: [
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
-      },
-      {
-        test:/.\.js$/,
-        exclude:/node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: { presets:['@babel/preset-env'] }
-        }
-      }
-      {
-        test:/\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]'
-        }
-      }
-    ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'css/style.css'
-    })
-  ]
-};
 
 ```
