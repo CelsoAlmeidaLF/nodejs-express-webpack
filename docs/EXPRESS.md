@@ -72,7 +72,7 @@ $ nano views/index.html
 
 ```
 
-- Codigo-fonte: [webpack](./docs/WEBPACK.md)
+- Codigo-fonte: [webpack](./WEBPACK.md)
 
 ```js
 const path = require('path');
