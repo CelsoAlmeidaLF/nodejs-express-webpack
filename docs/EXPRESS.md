@@ -7,11 +7,14 @@
 
 ```sh
 
-# instala as dependencias middleware
+# instalar as dependencias middleware
 $ npm i -D webpack-dev-middleware webpack-hot-middleware
 
-# arquivo ./bin/index.js
+# criar arquivo ./bin/index.js
 $ mkdir bin; touch ./bin/index.js
+
+# editar ./bin/index.js
+$ nano ./bin/index.js
 
 ```
 
