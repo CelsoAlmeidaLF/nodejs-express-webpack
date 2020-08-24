@@ -37,7 +37,6 @@ module.exports = {
 };
 
 ```
-
 - Execute o `webpack `
 
 ```sh

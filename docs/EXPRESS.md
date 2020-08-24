@@ -6,22 +6,21 @@
   - crie um arquivo `.bin/index.js` para configuração do servidor express.
 
 ```sh
-
 # instalar as dependencias middleware
-$ npm i -D webpack-dev-middleware webpack-hot-middleware
+$ npm i -D webpack-dev-middleware
 
-# criar arquivo ./bin/index.js
-$ mkdir bin; touch ./bin/index.js
+# criar diretórios principais
+$ mkdir bin src src/{scss,js} views
 
-# editar ./bin/index.js
+# cria arquivos principais
+$ touch ./bin/index.js ./src/scss/style.scss ./src/js/index.js ./views/index.html webpack.config.js
+
+# editar código express em ./bin/index.js
 $ nano ./bin/index.js
-
 ```
-
   - Código do `express` em `./bin/index.js`.
 
 ```js
-
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -47,20 +46,14 @@ app.listen(port, () => {
     `server runnin is http://localhost:${port}`)
 });
 
-
 ```
-  - Agora, crie um arvivo `./views/index.html` para testar o projeto.
+  - Edite o código-fonte em: `./views/index.html`
 
 ```sh
-
-# cria diretorio e arquivo
-$ mkdir ./views; touch views/index.html
-
 # editar arquivo
 $ nano views/index.html
-
 ```
-  - Copie e cole o Código fonte: `html`
+  - Código fonte: `html`
 
 ```html
 
@@ -76,5 +69,25 @@ $ nano views/index.html
     <script src="js/index.js" charset="utf-8"></script>
   </body>
 </html>
+
+```
+
+- Codigo-fonte: [webpack](./docs/WEBPACK.md)
+
+```js
+const path = require('path');
+
+module.exports = {
+  // mode: 'development',
+  entry: './src/index.js',
+  plugins: [],
+  output: {
+    filename:'js/index.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: []
+  }
+};
 
 ```
